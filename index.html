@@ -7,17 +7,16 @@
   <meta name="description" content="Você não precisa ter tudo para começar. Talvez precise olhar melhor para o que já está perto. Livro digital em PDF." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0a0a0a;
-      --bg-card: #141414;
-      --text: #ffffff;
-      --text-muted: #a0a0a0;
-      --text-soft: #c8c8c8;
-      --border: #2a2a2a;
-      --accent: #ffffff;
-      --radius: 12px;
+      --bg: #080808;
+      --bg-card: #111111;
+      --text: #f5f5f5;
+      --text-muted: #8a8a8a;
+      --text-soft: #c4c4c4;
+      --border: #222;
+      --radius: 10px;
     }
 
     * {
@@ -34,27 +33,27 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
       width: 100%;
-      max-width: 680px;
+      max-width: 640px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
     /* Header */
     header {
-      padding: 32px 0 48px;
+      padding: 36px 0 56px;
       text-align: center;
     }
 
     .logo {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 400;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.18em;
       color: var(--text-muted);
       text-transform: lowercase;
     }
@@ -62,35 +61,48 @@
     /* Hero */
     .hero {
       text-align: center;
-      padding-bottom: 64px;
+      padding-bottom: 72px;
     }
 
     .book-cover {
-      width: 180px;
-      height: 260px;
-      margin: 0 auto 40px;
-      background: #000;
-      border: 1px solid #333;
-      border-radius: 4px;
+      width: 170px;
+      height: 250px;
+      margin: 0 auto 48px;
+      background: linear-gradient(160deg, #0d0d0d 0%, #000 100%);
+      border: 1px solid #2a2a2a;
+      border-radius: 3px;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px 16px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      padding: 22px 18px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03),
+        0 25px 50px -12px rgba(0,0,0,0.8),
+        0 0 80px -20px rgba(255,255,255,0.04);
+    }
+
+    .book-cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
+      pointer-events: none;
+      border-radius: 3px;
     }
 
     .book-cover .line-top {
-      width: 24px;
+      width: 28px;
       height: 1px;
       background: #555;
     }
 
     .book-cover .number {
-      font-size: 64px;
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -0.03em;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 68px;
+      font-weight: 500;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
       margin: auto 0;
     }
 
@@ -99,82 +111,88 @@
     }
 
     .book-cover .number .zero {
-      color: #888;
+      color: #7a7a7a;
     }
 
     .book-cover .number .dot {
-      color: #888;
+      color: #7a7a7a;
     }
 
     .book-cover .bottom-text {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      font-size: 7px;
-      letter-spacing: 0.12em;
+      font-size: 6.5px;
+      letter-spacing: 0.14em;
       color: #666;
       text-transform: uppercase;
+      font-weight: 500;
     }
 
     .book-cover .bottom-text .title {
       text-align: left;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     .book-cover .bottom-text .edition {
       text-align: right;
+      line-height: 1.5;
     }
 
     .hero h1 {
-      font-size: 28px;
-      font-weight: 600;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 500;
       letter-spacing: -0.02em;
-      margin-bottom: 8px;
-      line-height: 1.2;
+      margin-bottom: 10px;
+      line-height: 1.15;
     }
 
     .hero .subtitle {
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
       color: var(--text-muted);
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .hero .description {
       font-size: 16px;
+      font-weight: 400;
       color: var(--text-soft);
-      max-width: 420px;
-      margin: 0 auto 32px;
-      line-height: 1.6;
+      max-width: 400px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
     }
 
     .btn {
       display: inline-block;
       background: #fff;
       color: #000;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 16px 40px;
+      padding: 17px 42px;
       border-radius: 100px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
       border: none;
       cursor: pointer;
     }
 
     .btn:hover {
-      background: #e8e8e8;
-      transform: translateY(-1px);
+      background: #eaeaea;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,255,255,0.08);
     }
 
     .hero .note {
-      margin-top: 16px;
-      font-size: 13px;
+      margin-top: 18px;
+      font-size: 12px;
       color: var(--text-muted);
+      letter-spacing: 0.02em;
     }
 
     /* Divider */
@@ -182,19 +200,20 @@
       height: 1px;
       background: var(--border);
       margin: 0 auto;
-      max-width: 680px;
+      max-width: 640px;
     }
 
     /* Sections */
     section {
-      padding: 64px 0;
+      padding: 72px 0;
       text-align: center;
     }
 
     section h2 {
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
       margin-bottom: 16px;
       line-height: 1.3;
     }
@@ -202,15 +221,16 @@
     section .lead {
       font-size: 16px;
       color: var(--text-soft);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      font-weight: 400;
     }
 
     section .body-text {
       font-size: 15px;
       color: var(--text-muted);
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     /* Media section */
@@ -219,74 +239,89 @@
     }
 
     .media-section .lead {
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
 
     .reels {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
 
     .reel-card {
-      width: 200px;
-      height: 280px;
-      background: #111;
-      border: 1px solid #2a2a2a;
+      width: 190px;
+      height: 270px;
+      background: #0e0e0e;
+      border: 1px solid #252525;
       border-radius: 8px;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 20px 16px;
+      padding: 22px 18px;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .reel-card:hover {
+      border-color: #3a3a3a;
+      transform: translateY(-3px);
     }
 
     .reel-card .big-number {
       position: absolute;
-      top: 50%;
+      top: 46%;
       left: 50%;
-      transform: translate(-50%, -55%);
-      font-size: 120px;
-      font-weight: 200;
-      color: rgba(255,255,255,0.06);
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 130px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.04);
       line-height: 1;
+      pointer-events: none;
     }
 
     .reel-card .reel-label {
-      font-size: 11px;
-      color: #666;
-      letter-spacing: 0.1em;
-      margin-bottom: 8px;
+      font-size: 10px;
+      color: #555;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .reel-card .reel-text {
       font-size: 13px;
       font-weight: 500;
-      line-height: 1.4;
+      line-height: 1.45;
       text-align: left;
+      letter-spacing: 0.01em;
     }
 
     .audio-player {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 24px;
+      border-radius: 12px;
+      padding: 18px 22px;
       display: flex;
       align-items: center;
       gap: 16px;
-      max-width: 480px;
+      max-width: 460px;
       margin: 0 auto;
       text-align: left;
+      transition: border-color 0.25s ease;
+    }
+
+    .audio-player:hover {
+      border-color: #333;
     }
 
     .audio-player .play-btn {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: #222;
+      background: #1a1a1a;
       border: 1px solid #333;
       display: flex;
       align-items: center;
@@ -294,17 +329,24 @@
       flex-shrink: 0;
       cursor: pointer;
       color: #fff;
-      font-size: 14px;
+      font-size: 13px;
+      transition: background 0.2s ease;
+    }
+
+    .audio-player .play-btn:hover {
+      background: #252525;
     }
 
     .audio-player .info {
       flex: 1;
+      min-width: 0;
     }
 
     .audio-player .info .title {
       font-size: 13px;
       font-weight: 500;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
+      letter-spacing: 0.02em;
     }
 
     .audio-player .info .meta {
@@ -315,29 +357,29 @@
     .audio-player .waveform {
       display: flex;
       align-items: center;
-      gap: 2px;
-      height: 24px;
-      opacity: 0.5;
+      gap: 2.5px;
+      height: 22px;
+      opacity: 0.45;
     }
 
     .audio-player .waveform span {
       display: block;
       width: 2px;
-      background: #888;
+      background: #999;
       border-radius: 1px;
     }
 
     /* Points */
     .points {
       text-align: left;
-      max-width: 480px;
-      margin: 40px auto 0;
+      max-width: 440px;
+      margin: 44px auto 0;
     }
 
     .point {
       display: flex;
-      gap: 20px;
-      padding: 20px 0;
+      gap: 22px;
+      padding: 22px 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -346,149 +388,164 @@
     }
 
     .point .num {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
       font-weight: 500;
-      min-width: 24px;
-      padding-top: 2px;
+      min-width: 22px;
+      padding-top: 3px;
+      letter-spacing: 0.04em;
     }
 
     .point .content h3 {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.04em;
-      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      margin-bottom: 5px;
     }
 
     .point .content p {
       font-size: 14px;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* Quote */
     .quote-section {
-      padding: 80px 0;
+      padding: 88px 0;
     }
 
     .quote-section .marks {
-      font-size: 48px;
-      color: #333;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 56px;
+      color: #2a2a2a;
       line-height: 1;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      font-weight: 400;
     }
 
     .quote-section blockquote {
-      font-size: 22px;
-      font-weight: 500;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 400;
       line-height: 1.4;
-      max-width: 480px;
-      margin: 0 auto 20px;
+      max-width: 460px;
+      margin: 0 auto 22px;
+      letter-spacing: -0.01em;
     }
 
     .quote-section .sub {
       font-size: 14px;
       color: var(--text-muted);
-      max-width: 400px;
+      max-width: 380px;
       margin: 0 auto;
+      line-height: 1.65;
     }
 
     /* Pricing */
     .pricing {
-      padding: 0 0 80px;
+      padding: 0 0 88px;
     }
 
     .pricing-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 48px 32px;
-      max-width: 420px;
+      border-radius: 14px;
+      padding: 52px 36px;
+      max-width: 400px;
       margin: 0 auto;
       text-align: center;
     }
 
     .pricing-card .label {
-      font-size: 12px;
-      letter-spacing: 0.15em;
+      font-size: 11px;
+      letter-spacing: 0.18em;
       color: var(--text-muted);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      font-weight: 500;
     }
 
     .pricing-card .book-title {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 4px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 6px;
     }
 
     .pricing-card .book-sub {
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      letter-spacing: 0.16em;
       color: var(--text-muted);
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      font-weight: 500;
     }
 
     .pricing-card .line {
-      width: 40px;
+      width: 32px;
       height: 1px;
-      background: var(--border);
-      margin: 0 auto 24px;
+      background: #333;
+      margin: 0 auto 28px;
     }
 
     .pricing-card .old-price {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
     }
 
     .pricing-card .price {
-      font-size: 42px;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 28px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 44px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin-bottom: 32px;
     }
 
     .pricing-card .btn {
       width: 100%;
-      max-width: 260px;
+      max-width: 240px;
     }
 
     .pricing-card .access-note {
-      margin-top: 16px;
+      margin-top: 18px;
       font-size: 12px;
       color: var(--text-muted);
     }
 
     /* Closing */
     .closing {
-      padding: 64px 0 48px;
+      padding: 72px 0 56px;
       text-align: center;
     }
 
     .closing p {
-      font-size: 18px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
       color: var(--text-soft);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-weight: 400;
     }
 
     .closing .final {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
     }
 
     footer {
-      padding: 32px 0 48px;
+      padding: 28px 0 48px;
       text-align: center;
-      font-size: 13px;
-      color: #555;
+      font-size: 12px;
+      color: #444;
+      letter-spacing: 0.1em;
     }
 
     /* Responsive */
     @media (max-width: 560px) {
       .hero h1 {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       .book-cover {
@@ -497,7 +554,7 @@
       }
 
       .book-cover .number {
-        font-size: 52px;
+        font-size: 56px;
       }
 
       .reels {
@@ -511,19 +568,23 @@
       }
 
       section h2 {
-        font-size: 20px;
+        font-size: 21px;
       }
 
       .quote-section blockquote {
-        font-size: 18px;
+        font-size: 20px;
       }
 
       .pricing-card {
-        padding: 40px 24px;
+        padding: 44px 24px;
       }
 
       .pricing-card .price {
-        font-size: 36px;
+        font-size: 38px;
+      }
+
+      .closing p {
+        font-size: 18px;
       }
     }
   </style>
@@ -553,8 +614,8 @@
           </div>
         </div>
 
-        <h1>100. O INÍCIO DE TUDO</h1>
-        <p class="subtitle">A PRIMEIRA PORTA</p>
+        <h1>100. O Início de Tudo</h1>
+        <p class="subtitle">A Primeira Porta</p>
         <p class="description">
           Você não precisa ter tudo para começar. Talvez precise olhar melhor para o que já está perto.
         </p>
@@ -568,47 +629,47 @@
     <!-- MEDIA -->
     <section class="media-section">
       <div class="container">
-        <h2>VEJA. OUÇA. ENTENDA.</h2>
+        <h2>Veja. Ouça. Entenda.</h2>
         <p class="lead">Antes de comprar, conheça o clima do livro.</p>
 
         <div class="reels">
           <div class="reel-card">
             <div class="big-number">2</div>
             <div class="reel-label">REEL 02</div>
-            <div class="reel-text">NÃO TENTA SER<br />O MAIS CRIATIVO.</div>
+            <div class="reel-text">Não tenta ser<br />o mais criativo.</div>
           </div>
           <div class="reel-card">
             <div class="big-number">6</div>
             <div class="reel-label">REEL 06</div>
-            <div class="reel-text">A VIDA É FEITA<br />DE POSSIBILIDADES.</div>
+            <div class="reel-text">A vida é feita<br />de possibilidades.</div>
           </div>
         </div>
 
         <div class="audio-player">
           <div class="play-btn" title="Play">▶</div>
           <div class="info">
-            <div class="title">OUÇA O CLIMA DO LIVRO</div>
+            <div class="title">Ouça o clima do livro</div>
             <div class="meta">Amostra instrumental · 30 segundos</div>
           </div>
           <div class="waveform">
-            <span style="height:8px"></span>
-            <span style="height:14px"></span>
-            <span style="height:10px"></span>
-            <span style="height:18px"></span>
-            <span style="height:12px"></span>
-            <span style="height:20px"></span>
+            <span style="height:7px"></span>
+            <span style="height:13px"></span>
             <span style="height:9px"></span>
-            <span style="height:16px"></span>
+            <span style="height:17px"></span>
             <span style="height:11px"></span>
             <span style="height:19px"></span>
-            <span style="height:7px"></span>
-            <span style="height:15px"></span>
-            <span style="height:13px"></span>
-            <span style="height:17px"></span>
-            <span style="height:10px"></span>
-            <span style="height:14px"></span>
             <span style="height:8px"></span>
+            <span style="height:15px"></span>
+            <span style="height:10px"></span>
+            <span style="height:18px"></span>
+            <span style="height:6px"></span>
+            <span style="height:14px"></span>
             <span style="height:12px"></span>
+            <span style="height:16px"></span>
+            <span style="height:9px"></span>
+            <span style="height:13px"></span>
+            <span style="height:7px"></span>
+            <span style="height:11px"></span>
           </div>
         </div>
       </div>
@@ -619,7 +680,7 @@
     <!-- PROBLEM -->
     <section>
       <div class="container">
-        <h2>TALVEZ O PROBLEMA NÃO SEJA FALTA DE VONTADE.</h2>
+        <h2>Talvez o problema não seja falta de vontade.</h2>
         <p class="lead">Às vezes você quer começar, mas não sabe por onde.</p>
         <p class="body-text">
           Parece que precisa de mais dinheiro, mais conhecimento, mais coragem ou uma ideia melhor. Mas, enquanto procura algo novo, pode estar deixando passar o que já existe perto de você.
@@ -632,7 +693,7 @@
     <!-- WHAT IS THIS BOOK -->
     <section>
       <div class="container">
-        <h2>ESTE LIVRO É UMA PRIMEIRA PORTA.</h2>
+        <h2>Este livro é uma primeira porta.</h2>
         <p class="lead">Uma conversa direta sobre começar — sem fórmula pronta e sem promessa de dinheiro fácil.</p>
 
         <div class="points">
@@ -688,8 +749,8 @@
       <div class="container">
         <div class="pricing-card">
           <div class="label">Condição de lançamento</div>
-          <div class="book-title">100. O INÍCIO DE TUDO</div>
-          <div class="book-sub">A PRIMEIRA PORTA</div>
+          <div class="book-title">100. O Início de Tudo</div>
+          <div class="book-sub">A Primeira Porta</div>
           <div class="line"></div>
           <div class="old-price">DE R$ 59,90 POR</div>
           <div class="price">R$ 29,90</div>
@@ -717,8 +778,7 @@
   </footer>
 
   <script>
-    // Placeholder for Kiwify checkout link
-    // Replace the href of #buy-btn and the hero button with your real Kiwify URL
+    // Placeholder — troque pelo link real da Kiwify
     document.getElementById('buy-btn').addEventListener('click', function(e) {
       e.preventDefault();
       alert('Substitua este botão pelo link do checkout da Kiwify.');
